@@ -1,35 +1,37 @@
-
-    // Initialize AOS (Animate on Scroll)
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS
     AOS.init({
         duration: 800,
         easing: 'ease-in-out',
         once: true
     });
-    
-    // Navigation scroll effect
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('navbar');
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
     });
-    
-    // Mobile Navigation Toggle
+
+    // Mobile navigation toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     
-    navLinks.classList.toggle('active');
-    const icon = hamburger.querySelector('i');
-    if (navLinks.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-    
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        const icon = hamburger.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
@@ -39,132 +41,61 @@
             icon.classList.add('fa-bars');
         });
     });
-    
-    // Typing effect animation
+
+    // Typing effect
     const typed = new Typed('#typing-effect', {
-        strings: ['Vasupriya', 'an AI Enthusiast', 'a Web Developer', 'a Designer'],
+        strings: ['Vasupriya', 'an AI Engineer', 'a Web Developer', 'a Researcher'],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
-    
-    // Particles.js initialization for background effect
+
+    // Particles.js initialization
     particlesJS('particles-js', {
         particles: {
-            number: {
-                value: 80,
-                density: {
-                    enable: true,
-                    value_area: 800
-                }
-            },
-            color: {
-                value: '#8A2BE2'
-            },
-            shape: {
-                type: 'circle',
-                stroke: {
-                    width: 0,
-                    color: '#000000'
-                }
-            },
-            opacity: {
-                value: 0.5,
-                random: false,
-                animation: {
-                    enable: true,
-                    speed: 1,
-                    opacity_min: 0.1,
-                    sync: false
-                }
-            },
-            size: {
-                value: 3,
-                random: true,
-                animation: {
-                    enable: true,
-                    speed: 2,
-                    size_min: 0.1,
-                    sync: false
-                }
-            },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: '#8A2BE2',
-                opacity: 0.4,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 2,
-                direction: 'none',
-                random: false,
-                straight: false,
-                out_mode: 'out',
-                bounce: false,
-            }
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#8A2BE2' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5, random: true, animation: { enable: true, speed: 1 } },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 150, color: '#8A2BE2', opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 2 }
         },
         interactivity: {
-            detect_on: 'canvas',
             events: {
-                onhover: {
-                    enable: true,
-                    mode: 'grab'
-                },
-                onclick: {
-                    enable: true,
-                    mode: 'push'
-                },
-                resize: true
-            },
-            modes: {
-                grab: {
-                    distance: 140,
-                    line_linked: {
-                        opacity: 1
-                    }
-                },
-                push: {
-                    particles_nb: 4
-                }
+                onhover: { enable: true, mode: 'grab' },
+                onclick: { enable: true, mode: 'push' }
             }
-        },
-        retina_detect: true
+        }
     });
-    
+
     // Animate skill bars
-    const skillLevels = document.querySelectorAll('.skill-level');
-    
-    function animateSkills() {
-        skillLevels.forEach(skill => {
-            const width = skill.getAttribute('data-width') + '%';
-            skill.style.width = width;
+    const animateSkills = () => {
+        document.querySelectorAll('.skill-level').forEach(skill => {
+            const width = skill.getAttribute('data-width');
+            skill.style.width = width + '%';
         });
-    }
-    
-    // Trigger skill animation when scrolled into view
-    const skillsSection = document.querySelector('#skills');
-    const observer = new IntersectionObserver((entries) => {
+    };
+
+    // Observe skills section for animation
+    const skillsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateSkills();
-                observer.unobserve(entry.target);
+                skillsObserver.unobserve(entry.target);
             }
         });
-    });
-    
-    observer.observe(skillsSection);
-    
+    }, { threshold: 0.1 });
+
+    skillsObserver.observe(document.getElementById('skills'));
+
     // Portfolio filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to current button
             button.classList.add('active');
             
             const filter = button.getAttribute('data-filter');
@@ -178,20 +109,40 @@
             });
         });
     });
-    
+
+    // Back to top button
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('active');
+        } else {
+            backToTopButton.classList.remove('active');
+        }
+    });
+
     // Form submission
     const contactForm = document.getElementById('contactForm');
-    
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        // Get form values
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
         
-        // Here you would typically send the form data to a server
-        // For demonstration, we'll just show an alert
-        alert(`Thank you, ${name}! Your message has been sent.`);
+        // Here you would typically send the data to a server
+        // For demo, we'll just show an alert
+        alert(`Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon.`);
         contactForm.reset();
     });
 
+    // Smooth scrolling for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
