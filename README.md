@@ -36,9 +36,7 @@ open index.html
 
 🤝 Connect With Me
 
-[LinkedIn](https://www.linkedin.com/in/vasupriya-patnaik)
-
-[vasupriyapatnaikbalivada@gmail.com](vasupriyapatnaikbalivada@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/vasupriya-patnaik) or [vasupriyapatnaikbalivada@gmail.com](vasupriyapatnaikbalivada@gmail.com)
 
 
 ⭐ If you find this portfolio useful, please consider giving it a star! ⭐
