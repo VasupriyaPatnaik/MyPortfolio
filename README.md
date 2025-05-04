@@ -20,7 +20,7 @@
 | **Deployment** | GitHub Pages / Netlify                |
 
 ## 🚀 Live Deployment  
-🔗 [https://vasupriyapatnaik.github.io](https://vasupriyapatnaik.github.io)  
+🔗 [https://vasupriyapatnaik.me](https://vasupriyapatnaik.me) 
 
 ## 📥 Installation & Setup  
 ```bash
@@ -32,3 +32,11 @@ cd portfolio
 
 # Open in default browser (or use Live Server in VSCode)
 open index.html
+
+🤝 Connect With Me
+LinkedIn
+GitHub
+Email
+
+⭐ If you find this portfolio useful, please consider giving it a star! ⭐
+💡 Suggestions and contributions are welcome!
