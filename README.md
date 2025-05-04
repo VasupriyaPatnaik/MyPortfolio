@@ -34,9 +34,7 @@ cd portfolio
 open index.html
 ```
 
-🤝 Connect With Me
-
-[LinkedIn](https://www.linkedin.com/in/vasupriya-patnaik) or [Email](vasupriyapatnaikbalivada@gmail.com)
+🤝 Connect With Me : [LinkedIn](https://www.linkedin.com/in/vasupriya-patnaik) or [Email](vasupriyapatnaikbalivada@gmail.com)
 
 
 
