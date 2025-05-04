@@ -32,11 +32,11 @@ cd portfolio
 
 # Open in default browser (or use Live Server in VSCode)
 open index.html
+```
 
 🤝 Connect With Me
-LinkedIn
-GitHub
-Email
+[LinkedIn](https://www.linkedin.com/in/vasupriya-patnaik)
+[vasupriyapatnaikbalivada@gmail.com](vasupriyapatnaikbalivada@gmail.com)
 
 ⭐ If you find this portfolio useful, please consider giving it a star! ⭐
 💡 Suggestions and contributions are welcome!
