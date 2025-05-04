@@ -347,7 +347,7 @@
             width: 300px;
             height: 300px;
             object-fit: cover;
-            border-radius: 50%; 
+            border-radius: 50%;
             background: var(--card);
             padding: 5px;
             border: 5px solid;
@@ -906,6 +906,17 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .btn-plain {
+                background: var(--card) !important;
+                border: 2px solid var(--primary) !important;
+                box-shadow: none !important;
+            }
+
+            .btn-plain:hover {
+                background: var(--gradient) !important;
+                border-color: transparent !important;
+            }
         }
     </style>
 </head>
@@ -933,6 +944,7 @@
             <h1>Hello, I'm <span class="highlight" id="typing-effect"></span></h1>
             <p class="tagline">AI & ML Enthusiast | Web Developer | Problem Solver</p>
             <a href="#portfolio" class="btn">View My Work</a>
+            <a href="#contact" class="btn btn-plain">Contact Me</a>
         </div>
         <div class="hero-scroll">
             <a href="#about" class="scroll-down">
@@ -1025,219 +1037,6 @@
                     <div class="education-details">
                         <p><strong>Percentage:</strong> 94.8%</p>
                         <p><strong>Board:</strong> Central Board of Secondary Education (CBSE)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coding Profiles Section -->
-    <section id="profiles" class="profiles">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Coding Profiles</h2>
-            <div class="profiles-container">
-                <!-- LeetCode Profile -->
-                <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="profile-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="profile-name">LeetCode</h3>
-                    <div class="profile-stats">
-                        <div class="stat-item">
-                            <span>Problems Solved:</span>
-                            <span>250+</span>
-                        </div>
-                        <div class="stat-item">
-                            <span>Contest Rating:</span>
-                            <span>1400+</span>
-                        </div>
-                    </div>
-                    <a href="https://leetcode.com/u/vasupriya20" class="btn" target="_blank">View Profile</a>
-                </div>
-
-                <!-- GitHub Profile -->
-                <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="profile-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3 class="profile-name">GitHub</h3>
-                    <div class="profile-stats">
-                        <div class="stat-item">
-                            <span>Repositories:</span>
-                            <span>30+</span>
-                        </div>
-                        <div class="stat-item">
-                            <span>Contributions:</span>
-                            <span>500+</span>
-                        </div>
-                    </div>
-                    <a href="https://github.com/VasupriyaPatnaik" class="btn" target="_blank">View Profile</a>
-                </div>
-
-                <!-- CodeChef Profile -->
-                <div class="profile-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="profile-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="profile-name">CodeChef</h3>
-                    <div class="profile-stats">
-                        <div class="stat-item">
-                            <span>Problems Solved:</span>
-                            <span>350+</span>
-                        </div>
-                        <div class="stat-item">
-                            <span>Rating:</span>
-                            <span>2-star</span>
-                        </div>
-                    </div>
-                    <a href="https://www.codechef.com/users/vasupriya20" class="btn" target="_blank">View Profile</a>
-                </div>
-
-                <!-- HackerRank Profile -->
-                <div class="profile-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="profile-icon">
-                        <i class="fab fa-hackerrank"></i>
-                    </div>
-                    <h3 class="profile-name">HackerRank</h3>
-                    <div class="profile-stats">
-                        <div class="stat-item">
-                            <span>Skills Verified:</span>
-                            <span>Python, C</span>
-                        </div>
-                        <div class="stat-item">
-                            <span>Badges:</span>
-                            <span>Silver Level</span>
-                        </div>
-                    </div>
-                    <a href="https://www.hackerrank.com/profile/vasupriya20" class="btn" target="_blank">View
-                        Profile</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Certifications</h2>
-            <div class="certifications-container">
-                <!-- Certification 1 -->
-                <div class="certification-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="certification-badge">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="certification-details">
-                        <h3 class="certification-title">Introduction to Java Programming</h3>
-                        <div class="certification-issuer">
-                            <i class="fas fa-award"></i>
-                            <span>UC3Mx (edX)</span>
-                        </div>
-                        <div class="certification-date">Issued: April 2024</div>
-                        <p>Successfully completed coursework in Java fundamentals including syntax, object-oriented programming concepts, and basic application development.</p>
-                        <a href="https://drive.google.com/file/d/1qC4cMwjjHcAL49JNisPyVJLncH3EgVeg/view?usp=sharing" class="certification-link">View Certificate</a>
-                    </div>
-                </div>
-
-                <!-- Certification 2 -->
-                <div class="certification-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="certification-badge">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="certification-details">
-                        <h3 class="certification-title">Pragati: Path to Future</h3>
-                        <div class="certification-issuer">
-                            <i class="fas fa-award"></i>
-                            <span>Pragati Program (Infosys)</span>
-                        </div>
-                        <div class="certification-date">Issued: March 2025</div>
-                        <p>Successfully completed the program including all mandatory assignments and training sessions conducted from December 2024 to March 2025.</p>
-                        <a href="https://drive.google.com/file/d/1YeXklgO3ekUdtz1apFi4vkxCcBuqAkdP/view?usp=sharing" class="certification-link">View Certificate</a>
-                    </div>
-                </div>
-
-                <!-- Certification 3 -->
-                <div class="certification-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="certification-badge">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="certification-details">
-                        <h3 class="certification-title">Ethical Hacking</h3>
-                        <div class="certification-issuer">
-                            <i class="fas fa-award"></i>
-                            <span>NPTEL Swayam & IIT Kharagpur</span>
-                        </div>
-                        <div class="certification-date">Issued: November 2024</div>
-                        <p>Earned elite certification in ethical hacking, demonstrating comprehensive skills in penetration testing, vulnerability assessment, and cybersecurity defense mechanisms.</p>
-                        <a href="https://drive.google.com/file/d/1AUkLA9aHlEjGJEvz-RK-0BmFcl_ioYKh/view?usp=sharing" class="certification-link">View Certificate</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Projects</h2>
-            <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ai">AI & ML</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="other">Other</button>
-            </div>
-            <div class="portfolio-grid">
-                <!-- Project 1: Human Pose Estimation -->
-                <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-image">
-                        <img src="pose.png" alt="Human Pose Estimation">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Human Pose Estimation</h3>
-                        <p>A Computer vision system for accurate body joint detection in real-time for fitness tracking and healthcare applications.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/Human-Pose-Estimation" class="btn">View Project</a>
-                    </div>
-                </div>
-
-                <!-- Project 2: RestaurantPro -->
-                <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="300">
-                    <div class="portfolio-image">
-                        <img src="img3.png" alt="RestaurantPro">
-                    </div> 
-                    <div class="portfolio-info">
-                        <h3>RestaurantPro</h3>
-                        <p>A robust restaurant listing system with location-based search, image recognition, and
-                            advanced filtering using Flask and MongoDB.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/RestaurantPro" class="btn" target="_blank">View
-                            Project</a>
-                    </div>
-                </div>
-
-                <!-- Project 3: Forecastera -->
-                <div class="portfolio-item" data-category="ai" data-aos="fade-up" data-aos-delay="400">
-                    <div class="portfolio-image">
-                        <img src="forecastra.png" alt="Forecastera">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Forecastera</h3>
-                        <p>A weather prediction web application using regression models with real-time visualization and
-                            historical data analysis.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/Forecastra" class="btn" target="_blank">View
-                            Project</a>
-                    </div>
-                </div>
-
-                <!-- Project 4: FoodConnect -->
-                <div class="portfolio-item" data-category="other" data-aos="fade-up" data-aos-delay="500">
-                    <div class="portfolio-image">
-                        <img src="foodconnect.png" alt="FoodConnect">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>FoodConnect</h3>
-                        <p>A Salesforce-based food donation platform managing venue selection, drop-off points, and
-                            volunteer coordination.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/Salesforce_FoodConnect" class="btn"
-                            target="_blank">View Project</a>
                     </div>
                 </div>
             </div>
@@ -1343,6 +1142,226 @@
         </div>
     </section>
 
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Projects</h2>
+            <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI & ML</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Project 1: Human Pose Estimation -->
+                <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <img src="pose.png" alt="Human Pose Estimation">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Human Pose Estimation</h3>
+                        <p>A Computer vision system for accurate body joint detection in real-time for fitness tracking
+                            and healthcare applications.</p>
+                        <a href="https://github.com/VasupriyaPatnaik/Human-Pose-Estimation" class="btn">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: RestaurantPro -->
+                <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-image">
+                        <img src="img3.png" alt="RestaurantPro">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>RestaurantPro</h3>
+                        <p>A robust restaurant listing system with location-based search, image recognition, and
+                            advanced filtering using Flask and MongoDB.</p>
+                        <a href="https://github.com/VasupriyaPatnaik/RestaurantPro" class="btn" target="_blank">View
+                            Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Forecastera -->
+                <div class="portfolio-item" data-category="ai" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-image">
+                        <img src="forecastra.png" alt="Forecastera">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Forecastera</h3>
+                        <p>A weather prediction web application using regression models with real-time visualization and
+                            historical data analysis.</p>
+                        <a href="https://github.com/VasupriyaPatnaik/Forecastra" class="btn" target="_blank">View
+                            Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: FoodConnect -->
+                <div class="portfolio-item" data-category="other" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-image">
+                        <img src="foodconnect.png" alt="FoodConnect">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>FoodConnect</h3>
+                        <p>A Salesforce-based food donation platform managing venue selection, drop-off points, and
+                            volunteer coordination.</p>
+                        <a href="https://github.com/VasupriyaPatnaik/Salesforce_FoodConnect" class="btn"
+                            target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+            <div class="certifications-container">
+                <!-- Certification 1 -->
+                <div class="certification-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certification-badge">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3 class="certification-title">Introduction to Java Programming</h3>
+                        <div class="certification-issuer">
+                            <i class="fas fa-award"></i>
+                            <span>UC3Mx (edX)</span>
+                        </div>
+                        <div class="certification-date">Issued: April 2024</div>
+                        <p>Successfully completed coursework in Java fundamentals including syntax, object-oriented
+                            programming concepts, and basic application development.</p>
+                        <a href="https://drive.google.com/file/d/1qC4cMwjjHcAL49JNisPyVJLncH3EgVeg/view?usp=sharing"
+                            class="certification-link">View Certificate</a>
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="certification-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certification-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3 class="certification-title">Pragati: Path to Future</h3>
+                        <div class="certification-issuer">
+                            <i class="fas fa-award"></i>
+                            <span>Pragati Program (Infosys)</span>
+                        </div>
+                        <div class="certification-date">Issued: March 2025</div>
+                        <p>Successfully completed the program including all mandatory assignments and training sessions
+                            conducted from December 2024 to March 2025.</p>
+                        <a href="https://drive.google.com/file/d/1YeXklgO3ekUdtz1apFi4vkxCcBuqAkdP/view?usp=sharing"
+                            class="certification-link">View Certificate</a>
+                    </div>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="certification-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certification-badge">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3 class="certification-title">Ethical Hacking</h3>
+                        <div class="certification-issuer">
+                            <i class="fas fa-award"></i>
+                            <span>NPTEL Swayam & IIT Kharagpur</span>
+                        </div>
+                        <div class="certification-date">Issued: November 2024</div>
+                        <p>Earned elite certification in ethical hacking, demonstrating comprehensive skills in
+                            penetration testing, vulnerability assessment, and cybersecurity defense mechanisms.</p>
+                        <a href="https://drive.google.com/file/d/1AUkLA9aHlEjGJEvz-RK-0BmFcl_ioYKh/view?usp=sharing"
+                            class="certification-link">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Coding Profiles Section -->
+    <section id="profiles" class="profiles">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Coding Profiles</h2>
+            <div class="profiles-container">
+                <!-- LeetCode Profile -->
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="profile-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="profile-name">LeetCode</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>Problems Solved:</span>
+                            <span>250+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Contest Rating:</span>
+                            <span>1400+</span>
+                        </div>
+                    </div>
+                    <a href="https://leetcode.com/u/vasupriya20" class="btn" target="_blank">View Profile</a>
+                </div>
+
+                <!-- GitHub Profile -->
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="profile-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="profile-name">GitHub</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>Repositories:</span>
+                            <span>30+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Contributions:</span>
+                            <span>500+</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/VasupriyaPatnaik" class="btn" target="_blank">View Profile</a>
+                </div>
+
+                <!-- CodeChef Profile -->
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="profile-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="profile-name">CodeChef</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>Problems Solved:</span>
+                            <span>350+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Rating:</span>
+                            <span>2-star</span>
+                        </div>
+                    </div>
+                    <a href="https://www.codechef.com/users/vasupriya20" class="btn" target="_blank">View Profile</a>
+                </div>
+
+                <!-- HackerRank Profile -->
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="profile-icon">
+                        <i class="fab fa-hackerrank"></i>
+                    </div>
+                    <h3 class="profile-name">HackerRank</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>Skills Verified:</span>
+                            <span>Python, C</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Badges:</span>
+                            <span>Silver Level</span>
+                        </div>
+                    </div>
+                    <a href="https://www.hackerrank.com/profile/vasupriya20" class="btn" target="_blank">View
+                        Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1382,6 +1401,7 @@
                     <form id="contactForm">
                         <input type="text" id="name" placeholder="Your Name" required>
                         <input type="email" id="email" placeholder="Your Email" required>
+                        <input type="text" id="subject" placeholder="Subject" required>
                         <textarea id="message" placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -1562,7 +1582,6 @@
             });
         });
 
-        // Form submission
         const contactForm = document.getElementById('contactForm');
 
         contactForm.addEventListener('submit', function (e) {
@@ -1570,30 +1589,21 @@
 
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            // Here you would typically send the form data to a server
-            // For demonstration, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+            const recipientEmail = 'vasupriyapatnaikbalivada@gmail.com';
+
+            // Construct Gmail URL with user-provided subject
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipientEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                message)}`;
+
+            // Open Gmail in a new tab
+            window.open(gmailUrl, '_blank');
+
+            // Reset form and show confirmation
             contactForm.reset();
-        });
-
-        // Theme toggle functionality
-        const themeToggle = document.createElement('button');
-        themeToggle.className = 'theme-toggle';
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        document.body.appendChild(themeToggle);
-
-        themeToggle.addEventListener('click', function () {
-            document.body.classList.toggle('light-mode');
-            const icon = themeToggle.querySelector('i');
-            if (document.body.classList.contains('light-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
         });
     </script>
 </body>
