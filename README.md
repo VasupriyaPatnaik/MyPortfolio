@@ -38,6 +38,8 @@ open index.html
 
 
 
+
+
 ⭐ If you find this portfolio useful, please consider giving it a star! ⭐
 
 💡 Suggestions and contributions are welcome!
