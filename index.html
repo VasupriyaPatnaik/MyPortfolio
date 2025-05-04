@@ -4,13 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vasupriya - Portfolio</title>
+    <title>Vasupriya Patnaik | AI/ML Engineer & Web Developer</title>
+    <meta name="description" content="Portfolio of Vasupriya Patnaik, AI/ML enthusiast and web developer">
+    <meta name="keywords" content="AI, Machine Learning, Web Development, Portfolio, Vasupriya">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
     <style>
-        /* CSS Reset */
+        /* CSS Variables */
         :root {
             --primary: #8A2BE2;
             --secondary: #00BFFF;
@@ -20,8 +31,11 @@
             --gray: #777;
             --card: #161626;
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --section-padding: 100px 10%;
+            --transition: all 0.3s ease;
         }
 
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -34,9 +48,27 @@
             background-color: var(--dark);
             color: var(--light);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Custom Scrollbar */
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -50,8 +82,87 @@
             border-radius: 5px;
         }
 
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--gradient);
+            color: var(--light);
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            transition: transform 0.5s ease;
+            transform: translateX(-100%);
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .highlight {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 4px;
+        }
+
         /* Navigation */
-        nav {
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
@@ -63,11 +174,11 @@
             background-color: rgba(15, 15, 26, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            transition: all 0.4s ease;
+            transition: var(--transition);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        nav.scrolled {
+        .navbar.scrolled {
             padding: 10px 10%;
             background-color: rgba(8, 8, 16, 0.98);
         }
@@ -100,12 +211,9 @@
         }
 
         .nav-links a {
-            text-decoration: none;
-            color: var(--light);
             font-weight: 500;
             font-size: 16px;
             position: relative;
-            transition: all 0.3s ease;
         }
 
         .nav-links a::after {
@@ -168,62 +276,10 @@
             overflow: hidden;
         }
 
-        .highlight {
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 4px;
-        }
-
         .tagline {
             font-size: 1.5rem;
             margin-bottom: 40px;
             color: var(--gray);
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: var(--gradient);
-            color: var(--light);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-            transition: transform 0.5s ease;
-            transform: translateX(-100%);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
-        }
-
-        .cta-button:hover::before {
-            transform: translateX(100%);
         }
 
         .hero-scroll {
@@ -240,58 +296,28 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-decoration: none;
         }
 
         @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
+            0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
             }
-
             40% {
                 transform: translateY(-20px);
             }
-
             60% {
                 transform: translateY(-10px);
             }
         }
 
-        /* Section Styling */
+        /* Sections */
         section {
-            padding: 100px 10%;
+            padding: var(--section-padding);
             position: relative;
         }
 
         section:nth-child(odd) {
             background-color: var(--darker);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 4px;
-            background: var(--gradient);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 4px;
         }
 
         /* About Section */
@@ -324,12 +350,6 @@
 
         .about-text {
             flex: 2;
-            line-height: 1.8;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
         }
 
         .about-details {
@@ -361,7 +381,7 @@
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: var(--transition);
         }
 
         .education-item:hover {
@@ -405,11 +425,6 @@
             border-left: 3px solid var(--primary);
         }
 
-        .education-details p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
         /* Coding Profiles Section */
         .profiles-container {
             display: grid;
@@ -425,7 +440,7 @@
             padding: 30px;
             text-align: center;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: var(--transition);
         }
 
         .profile-card:hover {
@@ -455,21 +470,6 @@
             margin-bottom: 8px;
         }
 
-        .profile-link {
-            display: inline-block;
-            padding: 8px 20px;
-            background: var(--gradient);
-            color: var(--light);
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .profile-link:hover {
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
-        }
-
         /* Certifications Section */
         .certifications-container {
             max-width: 1000px;
@@ -485,7 +485,7 @@
             align-items: center;
             gap: 25px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: var(--transition);
         }
 
         .certification-item:hover {
@@ -503,10 +503,6 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-        }
-
-        .certification-details {
-            flex-grow: 1;
         }
 
         .certification-title {
@@ -543,7 +539,7 @@
             text-decoration: none;
             border-radius: 20px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-size: 0.9rem;
         }
 
@@ -569,12 +565,11 @@
             padding: 10px 20px;
             border-radius: 25px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-weight: 500;
         }
 
-        .filter-btn.active,
-        .filter-btn:hover {
+        .filter-btn.active, .filter-btn:hover {
             background: var(--gradient);
             box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
         }
@@ -626,22 +621,6 @@
         .portfolio-info p {
             margin-bottom: 15px;
             color: var(--gray);
-            line-height: 1.6;
-        }
-
-        .portfolio-link {
-            display: inline-block;
-            padding: 8px 20px;
-            background: var(--gradient);
-            color: var(--light);
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-link:hover {
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
         }
 
         /* Skills Section */
@@ -695,7 +674,7 @@
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .skill-tag:hover {
@@ -746,9 +725,8 @@
             border-radius: 50%;
             background: var(--card);
             color: var(--light);
-            text-decoration: none;
             font-size: 20px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .social-link:hover {
@@ -767,18 +745,16 @@
             gap: 20px;
         }
 
-        input,
-        textarea {
+        input, textarea {
             padding: 15px;
             border-radius: 10px;
             background-color: var(--card);
             border: 2px solid transparent;
             color: var(--light);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
-        input:focus,
-        textarea:focus {
+        input:focus, textarea:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
@@ -787,24 +763,6 @@
         textarea {
             resize: vertical;
             min-height: 150px;
-        }
-
-        .submit-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: var(--gradient);
-            color: var(--light);
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            align-self: flex-start;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
         }
 
         /* Footer */
@@ -827,24 +785,7 @@
             z-index: 1;
         }
 
-        /* Animations */
-        .typed-cursor {
-            color: var(--primary);
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Dark Mode Toggle*/
+        /* Theme Toggle */
         .theme-toggle {
             position: fixed;
             bottom: 20px;
@@ -861,7 +802,7 @@
             align-items: center;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .theme-toggle:hover {
@@ -890,7 +831,7 @@
         }
 
         @media screen and (max-width: 768px) {
-            nav {
+            .navbar {
                 padding: 15px 5%;
             }
 
@@ -902,7 +843,7 @@
                 background-color: var(--darker);
                 width: 100%;
                 text-align: center;
-                transition: all 0.3s ease;
+                transition: var(--transition);
                 box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
                 padding: 20px 0;
             }
@@ -956,16 +897,13 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav id="navbar">
+    <nav class="navbar" id="navbar">
         <div class="logo">Vasp</div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#profiles">Coding Profiles</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#portfolio">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#portfolio">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger">
@@ -973,13 +911,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Particles -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="particles" id="particles-js"></div>
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Hello, I'm <span class="highlight" id="typing-effect"></span></h1>
-            <p class="tagline">AI & ML Enthusiast | Web Developer | Designer</p>
-            <a href="#portfolio" class="cta-button">View My Work</a>
+            <p class="tagline">AI & ML Enthusiast | Web Developer | Problem Solver</p>
+            <a href="#portfolio" class="btn">View My Work</a>
         </div>
         <div class="hero-scroll">
             <a href="#about" class="scroll-down">
@@ -990,23 +928,28 @@
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2 class="section-title" data-aos="fade-up">About Me</h2>
-        <div class="about-content">
-            <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
-                <img src="vasp.jpg" alt="Vasupriya's Image" class="profile-pic">
-            </div>
-            <div class="about-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <p>Hello! I'm a passionate AI & ML enthusiast specializing in building intelligent systems and
-                    innovative web applications. With expertise in Natural Language Processing, Machine Learning, and
-                    Frontend Development, I create solutions that empower users and deliver real-world impact.</p>
-                <div class="about-details">
-                    <div class="detail">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Based in Visakhapatnam, India</span>
-                    </div>
-                    <div class="detail">
-                        <i class="fas fa-briefcase"></i>
-                        <span>Open to internships and research collaborations</span>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="vasp.jpg" alt="Vasupriya Patnaik" class="profile-pic">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <p>I'm a passionate Computer Science student specializing in Artificial Intelligence and Machine Learning. With a strong foundation in algorithms, data structures, and software development, I'm dedicated to creating intelligent solutions that solve real-world problems.</p>
+                    <p>My expertise spans across machine learning, natural language processing, and full-stack web development. I thrive in collaborative environments and enjoy tackling complex challenges with innovative approaches.</p>
+                    <div class="about-details">
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Visakhapatnam, India</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>GVP College of Engineering</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Open to Opportunities</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1015,54 +958,56 @@
 
     <!-- Education Section -->
     <section id="education" class="education">
-        <h2 class="section-title" data-aos="fade-up">Education</h2>
-        <div class="education-container">
-            <!-- Education Item 1 -->
-            <div class="education-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="education-header">
-                    <h3 class="education-degree">Bachelor of Technology in Computer Science</h3>
-                    <div class="education-date">2022 - 2026</div>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Education</h2>
+            <div class="education-container">
+                <!-- Education Item 1 -->
+                <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-header">
+                        <h3 class="education-degree">B.Tech in Computer Science</h3>
+                        <div class="education-date">2022 - 2026</div>
+                    </div>
+                    <div class="education-institution">
+                        <i class="fas fa-university"></i>
+                        <span>Gayatri Vidya Parishad College of Engineering, Visakhapatnam</span>
+                    </div>
+                    <div class="education-details">
+                        <p><strong>CGPA:</strong> 9.14/10 (Current)</p>
+                        <p><strong>Specialization:</strong> Artificial Intelligence and Machine Learning</p>
+                        <p><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Machine Learning, Deep Learning, NLP, Computer Vision</p>
+                    </div>
                 </div>
-                <div class="education-institution">
-                    <i class="fas fa-university"></i>
-                    <span>Gayatri Vidya Parishad College Of Engineering, Visakhapatnam</span>
-                </div>
-                <div class="education-details">
-                    <p>CGPA: 9.14/10 </p>
-                    <p>Specialization in Artificial Intelligence and Machine Learning</p>
-                    <p>Relevant Coursework: Data Structures, Algorithms, Machine Learning, Deep Learning, NLP</p>
-                </div>
-            </div>
 
-            <!-- Education Item 2 -->
-            <div class="education-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="education-header">
-                    <h3 class="education-degree">Intermediate (12th Grade)</h3>
-                    <div class="education-date">2021 - 2022</div>
+                <!-- Education Item 2 -->
+                <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-header">
+                        <h3 class="education-degree">Intermediate (12th Grade)</h3>
+                        <div class="education-date">2021 - 2022</div>
+                    </div>
+                    <div class="education-institution">
+                        <i class="fas fa-school"></i>
+                        <span>Sri Chaitanya Vidyaniketan College, Visakhapatnam</span>
+                    </div>
+                    <div class="education-details">
+                        <p><strong>Percentage:</strong> 91.8%</p>
+                        <p><strong>Board:</strong> Board of Intermediate Education, Andhra Pradesh</p>
+                    </div>
                 </div>
-                <div class="education-institution">
-                    <i class="fas fa-school"></i>
-                    <span>Sri Chaitanya Vidyaniketan College, Visakhapatnam</span>
-                </div>
-                <div class="education-details">
-                    <p>Percentage: 91.8%</p>
-                    <p>Board of Intermediate Education, Andhra Pradesh</p>
-                </div>
-            </div>
 
-            <!-- Education Item 3 -->
-            <div class="education-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="education-header">
-                    <h3 class="education-degree">Secondary School (10th Grade)</h3>
-                    <div class="education-date">2019 - 2020</div>
-                </div>
-                <div class="education-institution">
-                    <i class="fas fa-school"></i>
-                    <span>Sri Chaitanya Techno School, Visakhapatnam</span>
-                </div>
-                <div class="education-details">
-                    <p>Percentage: 94.8%</p>
-                    <p>Central Board of Secondary Education (CBSE)</p>
+                <!-- Education Item 3 -->
+                <div class="education-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="education-header">
+                        <h3 class="education-degree">Secondary School (10th Grade)</h3>
+                        <div class="education-date">2019 - 2020</div>
+                    </div>
+                    <div class="education-institution">
+                        <i class="fas fa-school"></i>
+                        <span>Sri Chaitanya Techno School, Visakhapatnam</span>
+                    </div>
+                    <div class="education-details">
+                        <p><strong>Percentage:</strong> 94.8%</p>
+                        <p><strong>Board:</strong> Central Board of Secondary Education (CBSE)</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1070,169 +1015,171 @@
 
     <!-- Coding Profiles Section -->
     <section id="profiles" class="profiles">
-        <h2 class="section-title" data-aos="fade-up">Coding Profiles</h2>
-        <div class="profiles-container">
-            <!-- LeetCode Profile -->
-            <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="profile-icon">
-                    <i class="fas fa-code"></i>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Coding Profiles</h2>
+            <div class="profiles-container">
+                <!-- LeetCode Profile -->
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="profile-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="profile-name">LeetCode</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>Problems Solved:</span>
+                            <span>250+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Contest Rating:</span>
+                            <span>1400+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Global Rank:</span>
+                            <span>Top 50%</span>
+                        </div>
+                    </div>
+                    <a href="https://leetcode.com/u/vasupriya20" class="btn" target="_blank">View Profile</a>
                 </div>
-                <h3 class="profile-name">LeetCode</h3>
-                <div class="profile-stats">
-                    <div class="stat-item">
-                        <span>Problems Solved:</span>
-                        <span>250+</span>
-                    </div>
-                    <div class="stat-item">
-                        <span>Contest Rating:</span>
-                        <span>1400+</span>
-                    </div>
-                    <div class="stat-item">
-                        <span>Global Rank:</span>
-                        <span>Top 50%</span>
-                    </div>
-                </div>
-                <a href="https://leetcode.com/u/vasupriya20" class="profile-link" target="_blank">View Profile</a>
-            </div>
 
-            <!-- GitHub Profile -->
-            <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="profile-icon">
-                    <i class="fab fa-github"></i>
+                <!-- GitHub Profile -->
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="profile-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="profile-name">GitHub</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>Repositories:</span>
+                            <span>30+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Contributions:</span>
+                            <span>500+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Stars Earned:</span>
+                            <span>50+</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/VasupriyaPatnaik" class="btn" target="_blank">View Profile</a>
                 </div>
-                <h3 class="profile-name">GitHub</h3>
-                <div class="profile-stats">
-                    <div class="stat-item">
-                        <span>Repositories:</span>
-                        <span>30+</span>
-                    </div>
-                    <div class="stat-item">
-                        <span>Contributions:</span>
-                        <span>500+</span>
-                    </div>
-                    <div class="stat-item">
-                        <span>Stars Earned:</span>
-                        <span>50+</span>
-                    </div>
-                </div>
-                <a href="https://github.com/VasupriyaPatnaik" class="profile-link" target="_blank">View Profile</a>
-            </div>
 
-            <!-- CodeChef Profile -->
-            <div class="profile-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="profile-icon">
-                    <i class="fas fa-laptop-code"></i>
+                <!-- CodeChef Profile -->
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="profile-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="profile-name">CodeChef</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>Problems Solved:</span>
+                            <span>150+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Rating:</span>
+                            <span>2-star</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Global Rank:</span>
+                            <span>Top 15%</span>
+                        </div>
+                    </div>
+                    <a href="https://www.codechef.com/users/vasupriya20" class="btn" target="_blank">View Profile</a>
                 </div>
-                <h3 class="profile-name">CodeChef</h3>
-                <div class="profile-stats">
-                    <div class="stat-item">
-                        <span>Problems Solved:</span>
-                        <span>150+</span>
-                    </div>
-                    <div class="stat-item">
-                        <span>Rating:</span>
-                        <span>2-star</span>
-                    </div>
-                    <div class="stat-item">
-                        <span>Global Rank:</span>
-                        <span>Top 15%</span>
-                    </div>
-                </div>
-                <a href="https://www.codechef.com/users/vasupriya20" class="profile-link" target="_blank">View Profile</a>
-            </div>
 
-            <!-- HackerRank Profile -->
-            <div class="profile-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="profile-icon">
-                    <i class="fab fa-hackerrank"></i>
-                </div>
-                <h3 class="profile-name">HackerRank</h3>
-                <div class="profile-stats">
-                    <div class="stat-item">
-                        <span>Skills Verified:</span>
-                        <span>Python, C, Problem Solving, SQL</span>
+                <!-- HackerRank Profile -->
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="profile-icon">
+                        <i class="fab fa-hackerrank"></i>
                     </div>
-                    <div class="stat-item">
-                        <span>Badges:</span>
-                        <span>Silver Level</span>
+                    <h3 class="profile-name">HackerRank</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span>Skills Verified:</span>
+                            <span>Python, C, Problem Solving, SQL</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Badges:</span>
+                            <span>Silver Level</span>
+                        </div>
                     </div>
+                    <a href="https://www.hackerrank.com/profile/vasupriya20" class="btn" target="_blank">View Profile</a>
                 </div>
-                <a href="https://www.hackerrank.com/profile/vasupriya20" class="profile-link" target="_blank">View Profile</a>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="certifications">
-        <h2 class="section-title" data-aos="fade-up">Certifications</h2>
-        <div class="certifications-container">
-            <!-- Certification 1 -->
-            <div class="certification-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="certification-badge">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="certification-details">
-                    <h3 class="certification-title">Deep Learning Specialization</h3>
-                    <div class="certification-issuer">
-                        <i class="fas fa-award"></i>
-                        <span>DeepLearning.AI (Coursera)</span>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+            <div class="certifications-container">
+                <!-- Certification 1 -->
+                <div class="certification-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certification-badge">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <div class="certification-date">Issued: June 2023</div>
-                    <p>Mastered Neural Networks, CNNs, RNNs, Transformers, and their applications in computer vision and
-                        NLP.</p>
-                    <a href="#" class="certification-link">View Credential</a>
+                    <div class="certification-details">
+                        <h3 class="certification-title">Deep Learning Specialization</h3>
+                        <div class="certification-issuer">
+                            <i class="fas fa-award"></i>
+                            <span>DeepLearning.AI (Coursera)</span>
+                        </div>
+                        <div class="certification-date">Issued: June 2023</div>
+                        <p>Mastered Neural Networks, CNNs, RNNs, Transformers, and their applications in computer vision and NLP.</p>
+                        <a href="#" class="certification-link">View Credential</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Certification 2 -->
-            <div class="certification-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="certification-badge">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <div class="certification-details">
-                    <h3 class="certification-title">Machine Learning with Python</h3>
-                    <div class="certification-issuer">
-                        <i class="fas fa-award"></i>
-                        <span>IBM (Coursera)</span>
+                <!-- Certification 2 -->
+                <div class="certification-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certification-badge">
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <div class="certification-date">Issued: March 2023</div>
-                    <p>Learned regression, classification, clustering, and recommendation systems using scikit-learn.
-                    </p>
-                    <a href="#" class="certification-link">View Credential</a>
+                    <div class="certification-details">
+                        <h3 class="certification-title">Machine Learning with Python</h3>
+                        <div class="certification-issuer">
+                            <i class="fas fa-award"></i>
+                            <span>IBM (Coursera)</span>
+                        </div>
+                        <div class="certification-date">Issued: March 2023</div>
+                        <p>Learned regression, classification, clustering, and recommendation systems using scikit-learn.</p>
+                        <a href="#" class="certification-link">View Credential</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Certification 3 -->
-            <div class="certification-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="certification-badge">
-                    <i class="fas fa-cloud"></i>
-                </div>
-                <div class="certification-details">
-                    <h3 class="certification-title">AWS Certified Cloud Practitioner</h3>
-                    <div class="certification-issuer">
-                        <i class="fas fa-award"></i>
-                        <span>Amazon Web Services</span>
+                <!-- Certification 3 -->
+                <div class="certification-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certification-badge">
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <div class="certification-date">Issued: January 2023</div>
-                    <p>Demonstrated foundational understanding of AWS Cloud concepts, services, and architecture.</p>
-                    <a href="#" class="certification-link">View Credential</a>
+                    <div class="certification-details">
+                        <h3 class="certification-title">AWS Certified Cloud Practitioner</h3>
+                        <div class="certification-issuer">
+                            <i class="fas fa-award"></i>
+                            <span>Amazon Web Services</span>
+                        </div>
+                        <div class="certification-date">Issued: January 2023</div>
+                        <p>Demonstrated foundational understanding of AWS Cloud concepts, services, and architecture.</p>
+                        <a href="#" class="certification-link">View Credential</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Certification 4 -->
-            <div class="certification-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="certification-badge">
-                    <i class="fas fa-database"></i>
-                </div>
-                <div class="certification-details">
-                    <h3 class="certification-title">SQL for Data Science</h3>
-                    <div class="certification-issuer">
-                        <i class="fas fa-award"></i>
-                        <span>University of California (Coursera)</span>
+                <!-- Certification 4 -->
+                <div class="certification-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="certification-badge">
+                        <i class="fas fa-database"></i>
                     </div>
-                    <div class="certification-date">Issued: November 2022</div>
-                    <p>Learned to write complex queries, joins, and subqueries for data analysis and manipulation.</p>
-                    <a href="#" class="certification-link">View Credential</a>
+                    <div class="certification-details">
+                        <h3 class="certification-title">SQL for Data Science</h3>
+                        <div class="certification-issuer">
+                            <i class="fas fa-award"></i>
+                            <span>University of California (Coursera)</span>
+                        </div>
+                        <div class="certification-date">Issued: November 2022</div>
+                        <p>Learned to write complex queries, joins, and subqueries for data analysis and manipulation.</p>
+                        <a href="#" class="certification-link">View Credential</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1240,63 +1187,61 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
-        <h2 class="section-title" data-aos="fade-up">My Work</h2>
-        <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="ai">AI & ML</button>
-            <button class="filter-btn" data-filter="web">Web Development</button>
-            <button class="filter-btn" data-filter="other">Other Projects</button>
-        </div>
-        <div class="portfolio-grid">
-            <!-- Project 1: Cookbook Connect -->
-            <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-image">
-                    <img src="/api/placeholder/400/200" alt="Cookbook Connect">
-                </div>
-                <div class="portfolio-info">
-                    <h3>Cookbook Connect</h3>
-                    <p>A collaborative recipe-sharing platform designed to help users create and share customized meal
-                        plans.</p>
-                    <a href="#" class="portfolio-link">View Project</a>
-                </div>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Projects</h2>
+            <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI & ML</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="other">Other</button>
             </div>
+            <div class="portfolio-grid">
+                <!-- Project 1: Cookbook Connect -->
+                <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x200" alt="Cookbook Connect">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Cookbook Connect</h3>
+                        <p>A collaborative recipe-sharing platform designed to help users create and share customized meal plans with advanced search and recommendation features.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
 
-            <!-- Project 2: RestaurantPro -->
-            <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="300">
-                <div class="portfolio-image">
-                    <img src="resta.png" alt="RestaurantPro">
+                <!-- Project 2: RestaurantPro -->
+                <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-image">
+                        <img src="resta.png" alt="RestaurantPro">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>RestaurantPro</h3>
+                        <p>A robust restaurant listing system with location-based search, image recognition, and advanced filtering using Flask and MongoDB.</p>
+                        <a href="https://github.com/VasupriyaPatnaik/RestaurantPro" class="btn" target="_blank">View Project</a>
+                    </div>
                 </div>
-                <div class="portfolio-info">
-                    <h3>RestaurantPro - Restaurant Listing & Search</h3>
-                    <p>A robust system with location-based search, image-based search, and advanced filtering using
-                        Flask and MongoDB.</p>
-                    <a href="https://github.com/VasupriyaPatnaik/RestaurantPro" class="portfolio-link">View Project</a>
-                </div>
-            </div>
 
-            <!-- Project 3: Forecastera -->
-            <div class="portfolio-item" data-category="ai" data-aos="fade-up" data-aos-delay="400">
-                <div class="portfolio-image">
-                    <img src="/api/placeholder/400/200" alt="Forecastera">
+                <!-- Project 3: Forecastera -->
+                <div class="portfolio-item" data-category="ai" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x200" alt="Forecastera">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Forecastera</h3>
+                        <p>A weather prediction web application using regression models with real-time visualization and historical data analysis.</p>
+                        <a href="https://github.com/VasupriyaPatnaik/Forecastra" class="btn" target="_blank">View Project</a>
+                    </div>
                 </div>
-                <div class="portfolio-info">
-                    <h3>Forecastera - Weather Prediction</h3>
-                    <p>A regression-based web application predicting weather metrics with real-time visualization.</p>
-                    <a href="https://github.com/VasupriyaPatnaik/Forecastra" class="portfolio-link">View Project</a>
-                </div>
-            </div>
 
-            <!-- Other Project: FoodConnect -->
-            <div class="portfolio-item" data-category="other" data-aos="fade-up" data-aos-delay="500">
-                <div class="portfolio-image">
-                    <img src="/api/placeholder/400/200" alt="FoodConnect">
-                </div>
-                <div class="portfolio-info">
-                    <h3>FoodConnect</h3>
-                    <p>A Salesforce-based food donation platform managing venue selection, drop-off points, and
-                        volunteer coordination.</p>
-                    <a href="https://github.com/VasupriyaPatnaik/Salesforce_FoodConnect" class="portfolio-link">View
-                        Project</a>
+                <!-- Project 4: FoodConnect -->
+                <div class="portfolio-item" data-category="other" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x200" alt="FoodConnect">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>FoodConnect</h3>
+                        <p>A Salesforce-based food donation platform managing venue selection, drop-off points, and volunteer coordination.</p>
+                        <a href="https://github.com/VasupriyaPatnaik/Salesforce_FoodConnect" class="btn" target="_blank">View Project</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1304,108 +1249,99 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2 class="section-title" data-aos="fade-up">My Skills</h2>
-        <div class="skills-container" data-aos="fade-up" data-aos-delay="200">
-            <div class="skills-grid">
-                <!-- Programming Languages -->
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">C</span>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Skills</h2>
+            <div class="skills-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="skills-grid">
+                    <!-- Programming Languages -->
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">C</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- API Development -->
-                <div class="skill-category">
-                    <h3>API Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">RESTful APIs</span>
-                        <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">gRPC</span>
-                        <span class="skill-tag">JWT Authentication</span>
+                    <!-- Machine Learning -->
+                    <div class="skill-category">
+                        <h3>Machine Learning</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Scikit-Learn</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Computer Vision</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Machine Learning -->
-                <div class="skill-category">
-                    <h3>Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Scikit-Learn</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Computer Vision</span>
+                    <!-- Web Development -->
+                    <div class="skill-category">
+                        <h3>Web Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Backend Development -->
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Spring Boot</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Express.js</span>
-                        <span class="skill-tag">Node.js</span>
+                    <!-- Backend Development -->
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">Node.js</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Cloud Platforms -->
-                <div class="skill-category">
-                    <h3>Cloud Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Google Cloud</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Azure</span>
+                    <!-- Databases -->
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">Firebase</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Web Development -->
-                <div class="skill-category">
-                    <h3>Web Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
+                    <!-- Cloud Platforms -->
+                    <div class="skill-category">
+                        <h3>Cloud Platforms</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Google Cloud</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Azure</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Databases -->
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">Firebase</span>
+                    <!-- DevOps Tools -->
+                    <div class="skill-category">
+                        <h3>DevOps Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Jenkins</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- DevOps Tools -->
-                <div class="skill-category">
-                    <h3>DevOps Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">CI/CD (GitHub Actions)</span>
-                        <span class="skill-tag">Jenkins</span>
-                    </div>
-                </div>
-
-                <!-- Version Control -->
-                <div class="skill-category">
-                    <h3>Version Control</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">GitLab</span>
+                    <!-- Version Control -->
+                    <div class="skill-category">
+                        <h3>Version Control</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">GitLab</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1414,36 +1350,53 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-        <div class="contact-content">
-            <div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h3>Email</h3>
-                        <p>vasupriya@gmail.com</p>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>vasupriya@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Visakhapatnam, India</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/vasupriya-patnaik" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/VasupriyaPatnaik" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/vasupriya" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/vasupriya-patnaik" class="social-link"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/VasupriyaPatnaik" class="social-link"><i class="fab fa-github"></i></a>
+                <div class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <form id="contactForm">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <textarea id="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
-            </div>
-            <div class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <form id="contactForm">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <textarea id="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Vasupriya Patnaik Balivada. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Vasupriya Patnaik Balivada. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Scripts -->
@@ -1460,7 +1413,7 @@
         });
 
         // Navigation scroll effect
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -1473,7 +1426,7 @@
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
 
-        hamburger.addEventListener('click', function () {
+        hamburger.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             const icon = hamburger.querySelector('i');
             if (navLinks.classList.contains('active')) {
@@ -1497,13 +1450,13 @@
 
         // Typing effect animation
         const typed = new Typed('#typing-effect', {
-            strings: ['Vasupriya', 'an AI Enthusiast', 'a Web Developer', 'a Designer'],
+            strings: ['Vasupriya', 'an AI Engineer', 'a Web Developer', 'a Problem Solver'],
             typeSpeed: 100,
             backSpeed: 60,
             loop: true
         });
 
-        // Particles.js initialization for background effect
+        // Particles.js initialization
         particlesJS('particles-js', {
             particles: {
                 number: {
@@ -1614,7 +1567,7 @@
         // Form submission
         const contactForm = document.getElementById('contactForm');
 
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
             const name = document.getElementById('name').value;
@@ -1623,8 +1576,26 @@
 
             // Here you would typically send the form data to a server
             // For demonstration, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been sent.`);
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
             contactForm.reset();
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.createElement('button');
+        themeToggle.className = 'theme-toggle';
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        document.body.appendChild(themeToggle);
+
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
         });
     </script>
 </body>
