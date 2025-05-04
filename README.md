@@ -1,7 +1,7 @@
 # 👋 Hi, I'm Vasupriya Patnaik  
 ### 🚀 AI/ML Engineer & Full Stack Developer Portfolio  
 
-![Portfolio Preview](./screenshot.png)  
+![Portfolio Preview](./landing.png)  
 *A modern, responsive portfolio showcasing my skills in Artificial Intelligence, Machine Learning, and Web Development.*
 
 ## 🌟 Key Features  
