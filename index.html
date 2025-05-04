@@ -437,6 +437,71 @@
             border-left: 3px solid var(--primary);
         }
 
+        /* Experience Section */
+        .experience-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            background-color: var(--card);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.4);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            color: var(--secondary);
+        }
+
+        .experience-date {
+            background: var(--gradient);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .experience-company i {
+            color: var(--primary);
+        }
+
+        .experience-details {
+            margin-top: 15px;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .experience-details ul {
+            padding-left: 20px;
+        }
+
+        .experience-details li {
+            margin-bottom: 8px;
+        }
+
         /* Coding Profiles Section */
         .profiles-container {
             display: grid;
@@ -906,17 +971,6 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-
-            .btn-plain {
-                background: var(--card) !important;
-                border: 2px solid var(--primary) !important;
-                box-shadow: none !important;
-            }
-
-            .btn-plain:hover {
-                background: var(--gradient) !important;
-                border-color: transparent !important;
-            }
         }
     </style>
 </head>
@@ -944,7 +998,7 @@
             <h1>Hello, I'm <span class="highlight" id="typing-effect"></span></h1>
             <p class="tagline">AI & ML Enthusiast | Web Developer | Problem Solver</p>
             <a href="#portfolio" class="btn">View My Work</a>
-            <a href="#contact" class="btn btn-plain">Contact Me</a>
+            <a href="#contact" class="btn">Contact Me</a>
         </div>
         <div class="hero-scroll">
             <a href="#about" class="scroll-down">
@@ -1142,6 +1196,71 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Experience</h2>
+            <div class="experience-container">
+                <!-- Experience Item 1 -->
+                <div class="experience-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="experience-header">
+                        <h3 class="experience-title">AI Intern</h3>
+                        <div class="experience-date">Nov 2024 - Jan 2025</div>
+                    </div>
+                    <div class="experience-company">
+                        <i class="fas fa-building"></i>
+                        <span>Edunet Foundation</span>
+                    </div>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Built a real-time Human Pose Detection system using OpenCV, Mediapipe, and Streamlit.</li>
+                            <li>Implemented live keypoint tracking and gesture classification for interactive applications.</li>
+                            <li>Gained practical experience in computer vision, Python development, and model deployment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="experience-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Full Stack Web Development Intern</h3>
+                        <div class="experience-date">Oct 2024 - Dec 2024</div>
+                    </div>
+                    <div class="experience-company">
+                        <i class="fas fa-university"></i>
+                        <span>Eduskills Academy</span>
+                    </div>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Developed responsive front-end interfaces using React.js and Bootstrap, ensuring mobile-friendly user experiences.</li>
+                            <li>Built RESTful APIs with Node.js and Express to handle user authentication and data management.</li>
+                            <li>Integrated MongoDB for storing and retrieving user data, implementing basic CRUD operations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="experience-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Google AI-ML Intern</h3>
+                        <div class="experience-date">Apr 2024 - Jun 2024</div>
+                    </div>
+                    <div class="experience-company">
+                        <i class="fas fa-building"></i>
+                        <span>Google for Developers</span>
+                    </div>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Built a plant disease classifier using TensorFlow (90% accuracy).</li>
+                            <li>Implemented MongoDB storage for classification results with basic CRUD operations.</li>
+                            <li>Developed a simple Flask web interface to demonstrate model predictions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
@@ -1169,7 +1288,7 @@
                 <!-- Project 2: RestaurantPro -->
                 <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="300">
                     <div class="portfolio-image">
-                        <img src="img3.png" alt="RestaurantPro">
+                        <img src="resta.png" alt="RestaurantPro">
                     </div>
                     <div class="portfolio-info">
                         <h3>RestaurantPro</h3>
