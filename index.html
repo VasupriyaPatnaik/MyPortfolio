@@ -36,6 +36,58 @@
             --transition: all 0.3s ease;
         }
 
+        /* Light Theme */
+        [data-theme="light"] {
+            --dark: #FFFFFF;
+            --darker: #F8F9FA;
+            --light: #2C3E50;
+            --gray: #6C757D;
+            --card: #FFFFFF;
+            --primary: #8A2BE2;
+            --secondary: #00BFFF;
+        }
+
+        /* Light theme specific adjustments */
+        [data-theme="light"] .navbar {
+            background: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        [data-theme="light"] .navbar.scrolled {
+            background: rgba(248, 249, 250, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="light"] .card,
+        [data-theme="light"] .portfolio-item,
+        [data-theme="light"] .certification-item,
+        [data-theme="light"] .experience-item,
+        [data-theme="light"] .education-item,
+        [data-theme="light"] .profile-card {
+            background: #FFFFFF;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="light"] .tech-tag {
+            background: rgba(138, 43, 226, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+
+        [data-theme="light"] input,
+        [data-theme="light"] textarea {
+            background: #FFFFFF;
+            border: 2px solid #E9ECEF;
+            color: var(--light);
+        }
+
+        [data-theme="light"] input:focus,
+        [data-theme="light"] textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+        }
+
         /* Base Styles */
         * {
             margin: 0;
@@ -146,6 +198,45 @@
 
         .btn:hover::before {
             transform: translateX(100%);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--gradient);
+            color: var(--light);
+            border-color: transparent;
+        }
+
+        .project-tech {
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tech-tag {
+            background: rgba(138, 43, 226, 0.1);
+            color: var(--secondary);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .project-links .btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
         }
 
         .highlight {
@@ -282,8 +373,24 @@
 
         .tagline {
             font-size: 1.5rem;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             color: var(--gray);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .hero-scroll {
@@ -890,6 +997,40 @@
             box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
         }
 
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: var(--light);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+        }
+
         /* Responsive Design */
         @media screen and (max-width: 992px) {
             .about-content {
@@ -997,8 +1138,11 @@
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Hello, I'm <span class="highlight" id="typing-effect"></span></h1>
             <p class="tagline">AI & ML Enthusiast | Web Developer | Problem Solver</p>
-            <a href="#portfolio" class="btn">View My Work</a>
-            <a href="#contact" class="btn">Contact Me</a>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+                <a href="resume.pdf" class="btn btn-outline" target="_blank">Download Resume</a>
+            </div>
         </div>
         <div class="hero-scroll">
             <a href="#about" class="scroll-down">
@@ -1311,7 +1455,16 @@
                     <div class="portfolio-info">
                         <h3>EcoPulse</h3>
                         <p>A gamified sustainability tracker with a 3D interface, voice mascot, and challenges that make eco-friendly actions fun and rewarding.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/EcoPulse" class="btn" target="_blank">View Project</a>
+                        <div class="project-tech">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/VasupriyaPatnaik/EcoPulse" class="btn" target="_blank">View Code</a>
+                            <a href="#" class="btn btn-outline" target="_blank">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1323,7 +1476,15 @@
                     <div class="portfolio-info">
                         <h3>AI Redliner</h3>
                         <p>An AI-powered legal assistant that flags conflicts, gaps, and missing content—reducing review time from hours to minutes.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/AI-Redliner" class="btn" target="_blank">View Project</a>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/VasupriyaPatnaik/AI-Redliner" class="btn" target="_blank">View Code</a>
+                            <a href="#" class="btn btn-outline" target="_blank">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1335,7 +1496,16 @@
                     <div class="portfolio-info">
                         <h3>OrderIQ</h3>
                         <p>A smart order extraction system that converts email and fax orders into structured Excel using LLMs—minimizing manual work.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/OrderIQ" class="btn" target="_blank">View Project</a>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Pandas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/VasupriyaPatnaik/OrderIQ" class="btn" target="_blank">View Code</a>
+                            <a href="#" class="btn btn-outline" target="_blank">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1347,7 +1517,17 @@
                     <div class="portfolio-info">
                         <h3>Forecastera</h3>
                         <p>A weather prediction web application using regression models with real-time visualization and historical data analysis.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/Forecastra" class="btn" target="_blank">View Project</a>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Regression Models</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">APIs</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/VasupriyaPatnaik/Forecastra" class="btn" target="_blank">View Code</a>
+                            <a href="#" class="btn btn-outline" target="_blank">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1359,7 +1539,17 @@
                     <div class="portfolio-info">
                         <h3>Human Pose Estimation</h3>
                         <p>A computer vision system for accurate body joint detection in real-time for fitness tracking and healthcare applications.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/Human-Pose-Estimation" class="btn" target="_blank">View Project</a>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">MediaPipe</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/VasupriyaPatnaik/Human-Pose-Estimation" class="btn" target="_blank">View Code</a>
+                            <a href="#" class="btn btn-outline" target="_blank">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1371,7 +1561,17 @@
                     <div class="portfolio-info">
                         <h3>RestaurantPro</h3>
                         <p>A robust restaurant listing system with location-based search, image recognition, and advanced filtering using Flask and MongoDB.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/RestaurantPro" class="btn" target="_blank">View Project</a>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Image Recognition</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/VasupriyaPatnaik/RestaurantPro" class="btn" target="_blank">View Code</a>
+                            <a href="#" class="btn btn-outline" target="_blank">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1383,7 +1583,17 @@
                     <div class="portfolio-info">
                         <h3>FoodConnect</h3>
                         <p>A Salesforce-based food donation platform managing venue selection, drop-off points, and volunteer coordination.</p>
-                        <a href="https://github.com/VasupriyaPatnaik/Salesforce_FoodConnect" class="btn" target="_blank">View Project</a>
+                        <div class="project-tech">
+                            <span class="tech-tag">Salesforce</span>
+                            <span class="tech-tag">Apex</span>
+                            <span class="tech-tag">Lightning</span>
+                            <span class="tech-tag">CRM</span>
+                            <span class="tech-tag">Database Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/VasupriyaPatnaik/Salesforce_FoodConnect" class="btn" target="_blank">View Code</a>
+                            <a href="#" class="btn btn-outline" target="_blank">Live Demo</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1640,6 +1850,16 @@
         </div>
     </section>
 
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1833,6 +2053,60 @@
             // Reset form and show confirmation
             contactForm.reset();
             alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+        });
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        // Apply the current theme
+        if (currentTheme === 'light') {
+            body.setAttribute('data-theme', 'light');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        themeToggle.addEventListener('click', function() {
+            // Get current theme
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'light') {
+                // Switch to dark theme
+                body.removeAttribute('data-theme');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Switch to light theme
+                body.setAttribute('data-theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Scroll to Top Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Show/hide scroll to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top when button is clicked
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
